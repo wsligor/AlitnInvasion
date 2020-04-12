@@ -1,8 +1,9 @@
 import pygame
 from pygame.sprite import Group
+
+import game_functions as gf
 from settings import Settings
 from ship import Ship
-import game_functions as gf
 
 
 def run_game():
@@ -21,5 +22,6 @@ def run_game():
             if bullet.rect.bottom <= 0:
                 bullets.remove(bullet)
         gf.update_screen(ai_settings, screen, ship, bullets)
+
 
 run_game()
