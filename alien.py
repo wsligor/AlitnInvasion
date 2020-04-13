@@ -2,6 +2,7 @@ import pygame
 from pygame.sprite import Sprite
 
 
+
 class Alien(Sprite):
     def __init__(self, ai_setting, screen):
         super().__init__()
@@ -18,3 +19,8 @@ class Alien(Sprite):
 
     def blitme(self):
         self.screen.blit(self.image, self.rect)
+
+    def update(self):
+        self.x += self.ai_setting.alien_speed_factor
+        self.rect.x = self.x
+
